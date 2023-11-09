@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="https://tse2.mm.bing.net/th?id=OIP.zAvtDGShk_9AQZwzGqWRAwHaK5&pid=Api&P=0&h=180">
+    <title>Proflossmac.com</title>
+    <style>
+        body {margin:0;}
+        .top-part {
+            /*user-select used to prevent copying*/
+            user-select: none;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ft1 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .txt1 {
+            font-weight: 900;
+            font-size: 30px;
+            margin-left: 10px;
+            color: black;
+        }
+        .txt2 {
+            text-align: center;
+            font-weight: 900;
+            font-size: 30px;
+            margin-left: 10px;
+            color: black;
+            transition: 1s;
+        }
+        .wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box-2 {
+            /*Display:block; applies to everything inside box-2.Wrapper class only centers the box-2*/
+            display: block;
+            background-color: #DADADA;
+            height: 440px;
+            width: 420px;
+            border-radius: 10px;
+            transition: 1s;
+        }
+        .ca1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inp1 {
+            margin-right: 5px;
+            width: 120px;
+            height: 60px;
+            border: 2px solid #BABABA;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 40px;
+            font-weight: 900;
+               }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+               margin: 0;
+               }
+        .button1 {
+            height: 70px;
+            width:150px;
+            border: 2px solid #BABABA;
+            background-color: #C4C4C4;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 900;
+            color: white;
+            transition: 0.5s;
+        }
+        .button1:hover {
+            background-color: #938E8E;
+            color: white;
+        }
+        .txt3 {
+            visibility: hidden;
+            text-align: center;
+            font-weight: 900;
+            font-size: 30px;
+            margin-left: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body id="body">
+    <!----------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!----------------->
+    <br><div class="top-part">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.zAvtDGShk_9AQZwzGqWRAwHaK5&pid=Api&P=0&h=180" height="50" width="30">
+        <a class="txt1 ft1">ProfLossMach.com</a>
+    </div><br><br><br>
+    <div class="wrapper">
+        <div class="box-2" id="box2">
+            <p class="txt2 ft1" id="txt2">Enter the below boxes:</p><br>
+            <div class="ca1"><input type="number" class="inp1 ft1" id="ip1" placeholder="CP"><input type="number" class="inp1 ft1" id="ip2" placeholder="SP"></div><br>
+            <div class="ca1"><button class="button1 ft1" onclick="check()">Gain/Loss</button></div><br><br>
+            <div class="ca1"><a class="ft1 txt3" id="txt3">null</a></div>
+        </div>
+    </div>
+    <script>
+        function check() {
+          var cp = document.getElementById("ip1").value;
+          var sp = document.getElementById("ip2").value;
+          var shc = 0;
+          if(sp > cp) {
+            shc = 1;
+          }
+          else{}
+          if(shc == 1) {
+            document.getElementById("box2").style.backgroundColor = "#2DE18D";
+            document.getElementById("txt2").style.color = "white";
+            var gain = (sp) - (cp);
+            var pper = gain / (cp) * 100;
+            document.getElementById("txt3").innerHTML = "It's a Profit👍" + "<br>" + "Gained " + pper + "%";
+            document.getElementById("txt3").style.visibility = "visible";  
+          }
+          else{
+            document.getElementById("box2").style.backgroundColor = "#E36767";
+            document.getElementById("txt2").style.color = "white";
+            var loss = (cp) - (sp);
+            var lper = loss / (cp) * 100;
+            document.getElementById("txt3").innerHTML = "It's a Loss👎" + "<br>" + "Lossed " + lper + "%";
+            document.getElementById("txt3").style.visibility = "visible";  
+          }
+        }
+    </script>
+</body>
+</html>
